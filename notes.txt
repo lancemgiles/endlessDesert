@@ -1,0 +1,4 @@
+endless desert
+player can move freely in any direction
+"rooms" are bigger than the canvas, so the camera tracks the player up to the edge of the canvas, then then screen loads a new canvas (basically like any top down game)
+each "room" is the exact same desert and just loops around on itself
