@@ -5,16 +5,16 @@
     },
     "activeFile": "assets/desert.tmx",
     "expandedProjectPaths": [
-        ".",
-        "assets"
+        "assets",
+        "."
     ],
     "fileStates": {
         "assets/desert.tmx": {
             "scale": 1.1459375,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": -80.28361058085629,
-                "y": 26.179438232887914
+                "x": -81.15625852195255,
+                "y": 139.62367057540223
             }
         },
         "assets/desert.tmx#sand": {

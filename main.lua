@@ -4,10 +4,39 @@ function love.load()
 	Object = require "lib/classic"
 	windowSize = love.window.setMode(800, 800)
 
-	require "player"
-	player = Player()
+	-- require "player"
+	-- player = Player()
 	map = sti("assets/desert.lua")
 	local layer = map:addCustomLayer("Sprites", 3)
+	local player
+	for k, object in pairs(map.objects) do
+		if object.name == "Player" then
+			player = object
+			break
+		end
+	end
+
+	local sprite = love.graphics.newImage('assets/test.png')
+	layer.player = {
+		sprite = sprite,
+		x = player.x,
+		y = player.y,
+		ox = sprite:getWidth()/2,
+		oy = sprite:getHeight()/1.35
+	}
+
+	layer.draw = function(self)
+		love.graphics.draw(
+			self.player.sprite,
+			math.floor(self.player.x),
+			math.floor(self.player.y),
+			0,
+			1,
+			1,
+			self.player.ox,
+			self.player.oy
+		)
+	end
 end
 
 function love.update(dt)

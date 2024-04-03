@@ -57,7 +57,7 @@
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 </data>
  </layer>
- <objectgroup id="2" name="player">
+ <objectgroup id="2" name="Player">
   <object id="1" name="Player" type="Player" x="392" y="404"/>
  </objectgroup>
 </map>
