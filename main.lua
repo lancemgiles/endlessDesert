@@ -25,6 +25,22 @@ function love.load()
 		oy = sprite:getHeight()/1.35
 	}
 
+	layer.update = function(self, dt)
+		local speed = 96 * dt
+		if love.keyboard.isDown("w", "up") then
+			self.player.y = self.player.y - speed
+		end
+		if love.keyboard.isDown("s", "down") then
+			self.player.y = self.player.y + speed
+		end
+		if love.keyboard.isDown("a", "left") then
+			self.player.x = self.player.x - speed
+		end
+		if love.keyboard.isDown("d", "right") then
+			self.player.x = self.player.x + speed
+		end
+	end
+
 	layer.draw = function(self)
 		love.graphics.draw(
 			self.player.sprite,
@@ -36,6 +52,8 @@ function love.load()
 			self.player.ox,
 			self.player.oy
 		)
+		love.graphics.setPointSize(5)
+		love.graphics.points(math.floor(self.player.x), math.floor(player.y))
 	end
 end
 
@@ -44,5 +62,8 @@ function love.update(dt)
 end
 
 function love.draw()
-	map:draw()
+	local scale = 2
+	local screen_width = love.graphics.getWidth() / scale
+	local screen_height = love.graphics.getHeight() / scale
+	map:draw(scale)
 end
