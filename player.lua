@@ -6,7 +6,6 @@ function Player:new()
 	for k, object in pairs(map.objects) do
 		if object.name == "Player" then
 			spawn = object
-			print(object.x)
 			break
 		end
 	end
@@ -27,7 +26,6 @@ function Player:new()
 	self.currentFrame = 1
 	self.sprite = self.frames[self.currentFrame]
 end
-
 
 function Player:update(dt)
 	-- sprite sheet: down 1, up 2, left 3, right 4
@@ -58,4 +56,3 @@ function Player:draw()
 			scale
 		)
 end
-

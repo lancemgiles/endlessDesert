@@ -1,11 +1,14 @@
 function love.load()
 	Object = require "lib/classic"
-	windowSize = love.window.setMode(800, 800)
 	mapWidth = 800
 	sti = require 'lib/sti/sti'
 	map = sti("assets/desert.lua")
 	require "player"
 	player = Player()
+	music = love.audio.newSource('assets/the-long-life-that-we-desire-the-short-life-that-we-will-settle-for.ogg',
+		'stream')
+	music:setLooping(true)
+	music:play()
 end
 
 function love.update(dt)
