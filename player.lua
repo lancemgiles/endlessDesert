@@ -1,7 +1,6 @@
 Player = Object:extend()
 
 function Player:new()
-	-- self.sprite = love.graphics.newImage('assets/test.png')
 	local layer = map:addCustomLayer("Sprites", 3)
 	local spawn
 	for k, object in pairs(map.objects) do
@@ -50,9 +49,13 @@ function Player:update(dt)
 end
 
 function Player:draw()
+	local scale = 4
 	love.graphics.draw(self.spriteSheet, self.frames[self.currentFrame],
 			self.x,
-			self.y
+			self.y,
+			0,
+			scale,
+			scale
 		)
 end
 
