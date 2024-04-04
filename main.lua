@@ -9,14 +9,21 @@ function love.load()
 		'stream')
 	music:setLooping(true)
 	music:play()
+	love.graphics.setNewFont(36)
+	title = "Endless Desert"
+	timer = 0
+	isTitleScreen = true
 end
 
 function love.update(dt)
+	titleTimer(dt)
 	map:update(dt)
 	player:update(dt)
 end
 
 function love.draw()
+	
+
 	local scale = 8
 	local screen_width = love.graphics.getWidth() / scale
 	local screen_height = love.graphics.getHeight() / scale
@@ -27,6 +34,21 @@ function love.draw()
 	map:draw(-cx, -cy, scale)
 	player:draw()
 	mapLoop()
+	displayTitle()
+end
+
+function displayTitle()
+	if isTitleScreen then
+		love.graphics.print(title, 400, 400)
+		print(title)
+	end
+end
+
+function titleTimer(dt)
+	timer = timer + 1 * dt
+	if timer >= 3 then
+		isTitleScreen = false
+	end
 end
 
 function mapLoop()

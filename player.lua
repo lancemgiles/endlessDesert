@@ -10,7 +10,6 @@ function Player:new()
 		end
 	end
 	self.x = spawn.x
-	print(self.x)
 	self.y = spawn.y
 
 	self.spriteSheet = love.graphics.newImage("assets/sandmanSheet.png")
